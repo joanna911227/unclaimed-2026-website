@@ -1,0 +1,32 @@
+把正式圖片放進這個資料夾時，請使用以下檔名（跟 data.js 裡的路徑對應）：
+
+首頁背景：
+home-bg.jpg
+
+首頁展品縮圖（6 張）：
+exhibit-01.jpg
+exhibit-02.jpg
+exhibit-03.jpg
+exhibit-04.jpg
+exhibit-05.jpg
+exhibit-06.jpg
+
+展品故事頁背景（6 張）：
+exhibit-01-bg.jpg
+exhibit-02-bg.jpg
+exhibit-03-bg.jpg
+exhibit-04-bg.jpg
+exhibit-05-bg.jpg
+exhibit-06-bg.jpg
+
+角色圖片（每個展品 3 張：你 / 我 / 他，共 18 張）：
+exhibit-01-you.png
+exhibit-01-me.png
+exhibit-01-them.png
+exhibit-02-you.png
+exhibit-02-me.png
+exhibit-02-them.png
+...以此類推到 exhibit-06
+
+檔名可以換成 .jpg 或 .png 都可以，只要同時去 data.js 裡把對應的路徑也改成一樣的副檔名即可。
+只要檔名或路徑對不上，網站也不會壞掉，會自動顯示灰色 placeholder。

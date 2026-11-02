@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1" />
+<title id="pageTitle">遺憾轉運站｜互動故事展覽</title>
+<meta id="pageDescription" name="description" content="遺憾轉運站——選擇一件貨物，看看它背後留下的故事。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="app">
+
+  <!-- ============ 首頁 ============ -->
+  <section id="home-screen" class="screen home-screen active" aria-label="首頁">
+    <div class="home-bg" id="homeBg"></div>
+    <div class="home-scroll">
+      <header class="home-header">
+        <p class="eyebrow" id="homeEyebrow">EXHIBITION&nbsp;/&nbsp;遺憾轉運站</p>
+        <h1 class="home-title" id="homeTitle">遺憾轉運站</h1>
+        <p class="home-subtitle" id="homeSubtitle">選擇一件貨物，看看它背後留下的故事。</p>
+      </header>
+
+      <ul class="manifest-list" id="exhibitList" role="list">
+        <!-- 展品項目由 script.js 依 data.js 動態產生 -->
+      </ul>
+
+      <footer class="home-footer">
+        <p id="homeStats">共 5 件貨物 · 3 種視角 · 1 段故事</p>
+      </footer>
+    </div>
+  </section>
+
+  <!-- ============ 展品故事頁 ============ -->
+  <section id="story-screen" class="screen story-screen" aria-label="展品故事">
+    <div class="story-bg" id="storyBg"></div>
+    <div class="story-scrim"></div>
+
+    <div class="story-scroll" id="storyScroll">
+      <nav class="story-topbar">
+        <button type="button" class="back-btn" id="backBtn">
+          <span class="back-arrow" aria-hidden="true">←</span>
+          <span>返回所有展品</span>
+        </button>
+      </nav>
+
+      <header class="story-header">
+        <p class="eyebrow" id="storyEyebrow">EXHIBIT</p>
+        <h2 class="story-title" id="storyTitle">展品名稱</h2>
+        <p class="story-hint" id="storyHint">左右滑動，看看他們記得的故事。</p>
+      </header>
+
+      <!-- 三角色互動旋轉區 -->
+      <div class="carousel-wrap">
+        <div class="carousel" id="carousel">
+          <div class="carousel-drag-layer" id="carouselDragLayer">
+
+            <div class="char-slot" data-role="left" id="slotLeft" role="button" tabindex="0" aria-label="切換到左側角色">
+              <span class="char-figure">
+                <img class="char-img" alt="" draggable="false" />
+                <span class="char-fallback" aria-hidden="true"></span>
+              </span>
+              <span class="char-name"></span>
+            </div>
+
+            <div class="char-slot" data-role="center" id="slotCenter" aria-live="polite">
+              <span class="char-figure">
+                <img class="char-img" alt="" draggable="false" />
+                <span class="char-fallback" aria-hidden="true"></span>
+              </span>
+              <span class="char-name"></span>
+            </div>
+
+            <div class="char-slot" data-role="right" id="slotRight" role="button" tabindex="0" aria-label="切換到右側角色">
+              <span class="char-figure">
+                <img class="char-img" alt="" draggable="false" />
+                <span class="char-fallback" aria-hidden="true"></span>
+              </span>
+              <span class="char-name"></span>
+            </div>
+
+          </div>
+        </div>
+        <div class="carousel-dots" id="carouselDots" aria-hidden="true"></div>
+      </div>
+
+      <!-- 故事文字區 -->
+      <div class="story-panel">
+        <div class="story-panel-inner" id="storyTextWrap">
+          <p class="story-speaker" id="storySpeaker">我</p>
+          <p class="story-text" id="storyText">故事內容。</p>
+        </div>
+      </div>
+
+      <!-- 每件展品固定的系統備註 -->
+      <aside class="system-note" id="systemNoteWrap" aria-label="系統備註">
+        <p class="system-note-label">SYSTEM NOTE / 系統備註</p>
+        <p class="system-note-text" id="systemNoteText"></p>
+      </aside>
+    </div>
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
