@@ -25,7 +25,7 @@
    ============================================================ */
 
 window.siteConfig = {
-  exhibitionName: "無人簽收",
+  exhibitionName: "無人簽收 UNCLAIMED",
   englishLabel: "EXHIBITION",
   homeSubtitle: "選擇一件貨物，看看它背後留下的故事。"
 };
