@@ -33,7 +33,7 @@ window.siteConfig = {
 window.exhibits = [
   {
     id: 1,
-    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟣   LOVE  ▐ ",
+    title: " ᴄʜᴀᴘᴛᴇʀ.𝟣   LOVE  ",
     subtitle: "關係滯留件",
     hint: `那些警示從來不是為了阻止誰離開，
 而是當我們忘記了該如何靠近彼此時，
