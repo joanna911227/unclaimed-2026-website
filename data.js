@@ -18,7 +18,7 @@
                      每位角色有 name / image / story
 
    圖片路徑都是「相對於 index.html」的路徑，
-   例如 images/exhibit-01.jpg。
+   例如 images/exhibit-01.webp。
 
    如果圖片檔案還不存在，網站不會壞掉，
    會自動顯示灰色 placeholder。
@@ -38,8 +38,8 @@ window.exhibits = [
     hint: `那些警示從來不是為了阻止誰離開，
 而是當我們忘記了該如何靠近彼此時，
 不斷掙扎所留下來的痕跡。`,
-    coverImage: "images/exhibit-01.png",
-    backgroundImage: "images/exhibit-01.bg.png",
+    coverImage: "images/exhibit-01.webp",
+    backgroundImage: "images/exhibit-01.bg.webp",
     systemNote: `此區域曾出現長時間情感滯留現象，系統已暫時封鎖，請配合現場指示移動`,
     characters: [
       {
@@ -204,8 +204,8 @@ systemNote: `柔軟的外表下，藏著那顆不得不變堅硬的心`
     hint: `遺忘發生在碎裂之前
     也許等到碎裂之後，我們才有勇氣再次正視彼此`
 ,
-    coverImage: "images/exhibit-02.png",
-    backgroundImage: "images/exhibit-02.bg.png",
+    coverImage: "images/exhibit-02.webp",
+    backgroundImage: "images/exhibit-02.bg.webp",
     systemNote: "現場曾出現長時間視角偏移，部分畫面無法對焦，請勿過度相信鏡中內容。",
     characters: [
       {
@@ -353,8 +353,8 @@ systemNote: `就算身處不同地方，看到的藍天和月亮也是同一個�
     hint: `我們總把「下次」說得很輕，卻忘了時間也有重量，
     你又願意用多少斤蘋果，換一斤和他們相處的日子`
     ,
-    coverImage: "images/exhibit-03.png",
-    backgroundImage: "images/exhibit-03.bg.png",
+    coverImage: "images/exhibit-03.webp",
+    backgroundImage: "images/exhibit-03.bg.webp",
     systemNote: "現場長期出現超重反應，部分情緒無法秤量，請小心搬運",
     characters: [
       {
@@ -513,8 +513,8 @@ systemNote: `吃完蘋果，我們的時間也不多了`
     title: "  ᴄʜ.𝟦 \n 𝙈𝙚, 𝙈𝙮𝙨𝙚𝙡𝙛 𝙖𝙣𝙙 𝙄 ",
     subtitle: "自我遺失件",
     hint: "我們繞過困難，繞過阻礙，卻也不小心繞過了自己",
-    coverImage: "images/exhibit-04.png",
-    backgroundImage: "images/exhibit-04.bg.png",
+    coverImage: "images/exhibit-04.webp",
+    backgroundImage: "images/exhibit-04.bg.webp",
     systemNote: "現場長期設有警示區域，部分通道尚未修復完成，請勿過度停留",
     characters: [
       {
@@ -703,8 +703,8 @@ systemNote: `燈亮起，才看得見真正的自己`
     title: "  ᴄʜ.𝟧 𝕀𝕟 𝔹𝕖𝕥𝕨𝕖𝕖𝕟 ",
     subtitle: "常態貨品",
     hint: "那些再平凡不過的日子，都成了我們口中的談資",
-    coverImage: "images/exhibit-05.png",
-    backgroundImage: "images/exhibit-05.bg.png",
+    coverImage: "images/exhibit-05.webp",
+    backgroundImage: "images/exhibit-05.bg.webp",
     systemNote: "部分日常未標示最後投遞日期，請勿因內容重複而忽略查收",
     characters: [
       {
