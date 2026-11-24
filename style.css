@@ -4,16 +4,16 @@
    ============================================================ */
 
 :root{
-  --color-bg:        #0c0b0a;
-  --color-bg-elev:   #171512;
-  --color-text:      #ece6da;
-  --color-text-dim:  #a89f8f;
-  --color-text-mute: #6f675b;
-  --color-line:      rgba(236,230,218,0.14);
-  --color-accent:    #ab8657;
-  --color-accent-soft: rgba(171,134,87,0.4);
-  --color-placeholder: #2a2723;
-
+  --color-bg:          #FAF5E8;
+  --color-bg-elev:     #EED484;
+  --color-text:        #38291E;
+  --color-text-dim:    #704522;
+  --color-text-mute:   #8C725A;
+  --color-line:        rgba(112,69,34,0.25);
+  --color-accent:      #704522;
+  --color-accent-soft: rgba(112,69,34,0.15);
+  --color-placeholder: #E8DCC5;
+   
   --font-display: 'Noto Serif TC', serif;
   --font-body: 'Noto Sans TC', sans-serif;
 
