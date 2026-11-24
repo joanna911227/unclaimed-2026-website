@@ -223,6 +223,7 @@ img{ max-width:100%; display:block; }
   font-size: 18px;
   letter-spacing: 0.03em;
   margin-bottom: 6px;
+  white-space: pre-line;
 }
 
 .manifest-subtitle{
