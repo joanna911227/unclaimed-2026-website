@@ -95,11 +95,28 @@
         </div>
       </div>
 
-      <!-- 每件展品固定的系統備註 -->
-      <aside class="system-note" id="systemNoteWrap" aria-label="系統備註">
-        <p class="system-note-label">SYSTEM NOTE / 系統備註</p>
-        <p class="system-note-text" id="systemNoteText"></p>
-      </aside>
+     <!-- 系統備註按鈕與彈窗 -->
+<aside class="system-note" id="systemNoteWrap" aria-label="系統備註">
+
+  <button type="button" class="system-note-button" id="systemNoteButton">
+    SYSTEM NOTE / 系統備註 ＋
+  </button>
+
+  <dialog class="system-note-modal" id="systemNoteModal" aria-labelledby="systemNoteTitle">
+
+    <button type="button" class="system-note-close" id="systemNoteClose" aria-label="關閉">
+      ×
+    </button>
+
+    <p class="system-note-label" id="systemNoteTitle">
+      SYSTEM NOTE / 系統備註
+    </p>
+
+    <p class="system-note-text" id="systemNoteText"></p>
+
+  </dialog>
+
+</aside>
     </div>
   </section>
 
