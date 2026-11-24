@@ -386,3 +386,47 @@ function renderStory(character, animate) {
     init();
   }
 })();
+
+
+
+// ===== 系統備註彈窗控制 =====
+
+function initSystemNoteModal() {
+  const noteButton = document.getElementById("systemNoteButton");
+  const noteModal = document.getElementById("systemNoteModal");
+  const noteClose = document.getElementById("systemNoteClose");
+
+  if (!noteButton || !noteModal || !noteClose) return;
+
+  // 開啟彈窗
+  noteButton.addEventListener("click", () => {
+    if (!noteModal.open) {
+      noteModal.showModal();
+    }
+  });
+
+  // 點擊右上角 X 關閉
+  noteClose.addEventListener("click", () => {
+    noteModal.close();
+  });
+
+  // 點擊彈窗外部關閉
+  noteModal.addEventListener("click", (event) => {
+    const rect = noteModal.getBoundingClientRect();
+
+    if (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    ) {
+      noteModal.close();
+    }
+  });
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initSystemNoteModal);
+} else {
+  initSystemNoteModal();
+}
