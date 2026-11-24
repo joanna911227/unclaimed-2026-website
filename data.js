@@ -510,7 +510,7 @@ systemNote: `吃完蘋果，我們的時間也不多了`
   },
   {
     id: 4,
-    title: "  ᴄʜ.𝟦 𝙈𝙚, 𝙈𝙮𝙨𝙚𝙡𝙛 𝙖𝙣𝙙 𝙄 ",
+    title: "  ᴄʜ.𝟦 \n 𝙈𝙚, 𝙈𝙮𝙨𝙚𝙡𝙛 𝙖𝙣𝙙 𝙄 ",
     subtitle: "自我遺失件",
     hint: "我們繞過困難，繞過阻礙，卻也不小心繞過了自己",
     coverImage: "images/exhibit-04.png",
