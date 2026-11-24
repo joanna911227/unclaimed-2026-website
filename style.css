@@ -581,6 +581,8 @@ img{ max-width:100%; display:block; }
   letter-spacing: 2px;
   cursor: pointer;
   transition: background 0.2s;
+  display: block;
+  margin: 0 auto;
 }
 
 .system-note-button:hover {
