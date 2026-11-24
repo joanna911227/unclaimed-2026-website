@@ -565,3 +565,93 @@ img{ max-width:100%; display:block; }
 
 /* 讓可點擊區塊在行動裝置上有足夠的觸控面積 */
 .back-btn, .manifest-btn{ -webkit-tap-highlight-color: transparent; }
+
+
+
+/* ===== 系統備註按鈕 ===== */
+
+.system-note-button {
+  background: transparent;
+  border: 1px solid #927347;
+  color: #c29c60;
+  padding: 12px 24px;
+  font-family: inherit;
+  font-size: 12px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.system-note-button:hover {
+  background: rgba(194, 156, 96, 0.1);
+}
+
+/* ===== 系統備註彈窗 ===== */
+
+.system-note-modal {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: 85%;
+  max-width: 360px;
+  max-height: 80vh;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 40px 24px;
+  background: #171512;
+  border: 1px solid #927347;
+  color: #e3d6c0;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.system-note-modal::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+}
+
+/* ===== 關閉按鈕 ===== */
+
+.system-note-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: #c29c60;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+/* ===== 彈窗內文字 ===== */
+
+.system-note-modal .system-note-label {
+  color: #c29c60;
+  font-size: 11px;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+}
+
+.system-note-modal .system-note-text {
+  color: #e3d6c0;
+  font-size: 15px;
+  line-height: 2;
+  white-space: pre-wrap;
+}
+
+/* ===== 彈窗淡入動畫 ===== */
+
+.system-note-modal[open] {
+  animation: noteFadeIn 0.25s ease-out;
+}
+
+@keyframes noteFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
