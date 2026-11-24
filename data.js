@@ -33,8 +33,8 @@ window.siteConfig = {
 window.exhibits = [
   {
     id: 1,
-    title: "封鎖線",
-    subtitle: "關係滯留 限制通行",
+    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟣   LOVE  ▐ ",
+    subtitle: "關係滯留件",
     hint: `那些警示從來不是為了阻止誰離開，
 而是當我們忘記了該如何靠近彼此時，
 不斷掙扎所留下來的痕跡。`,
@@ -199,8 +199,8 @@ systemNote: `柔軟的外表下，藏著那顆不得不變堅硬的心`
   },
   {
     id: 2,
-    title: "反光鏡",
-    subtitle: "影像失真，關係偏移",
+    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟤   ̷F̷R̷I̷E̷N̷D̷S̷H̷I̷P̷ ▐",
+    subtitle: "關係偏移件",
     hint: `遺忘發生在碎裂之前
     也許等到碎裂之後，我們才有勇氣再次正視彼此`
 ,
@@ -348,7 +348,7 @@ systemNote: `就算身處不同地方，看到的藍天和月亮也是同一個�
   },
   {
     id: 3,
-    title: "地秤",
+    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟥  ⅄ꓶIWⱯℲ▐ ",
     subtitle: "重量異常件",
     hint: `我們總把「下次」說得很輕，卻忘了時間也有重量，
     你又願意用多少斤蘋果，換一斤和他們相處的日子`
@@ -510,7 +510,7 @@ systemNote: `吃完蘋果，我們的時間也不多了`
   },
   {
     id: 4,
-    title: "角錐",
+    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟦  𝙈𝙚, 𝙈𝙮𝙨𝙚𝙡𝙛 𝙖𝙣𝙙 𝙄▐ ",
     subtitle: "自我遺失件",
     hint: "我們繞過困難，繞過阻礙，卻也不小心繞過了自己",
     coverImage: "images/exhibit-04.png",
@@ -700,7 +700,7 @@ systemNote: `燈亮起，才看得見真正的自己`
   },
   {
     id: 5,
-    title: "郵箱",
+    title: "▐  ᴄʜᴀᴘᴛᴇʀ.𝟧  𝕀𝕟 𝔹𝕖𝕥𝕨𝕖𝕖𝕟▐ ",
     subtitle: "常態貨品",
     hint: "那些再平凡不過的日子，都成了我們口中的談資",
     coverImage: "images/exhibit-05.png",
