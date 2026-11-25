@@ -729,3 +729,20 @@ opacity: 0.9;
 .story-sticky.is-compact .carousel-dots{
   display: none;
 }
+
+/* 初始展品頁：移除標題及三視角底板 */
+
+.story-sticky:not(.is-compact) {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.story-sticky:not(.is-compact) .story-header,
+.story-sticky:not(.is-compact) .carousel-wrap {
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
