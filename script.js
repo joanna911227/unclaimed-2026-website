@@ -15,12 +15,25 @@
   const storyScroll  = document.getElementById("storyScroll");
    const storySticky = document.getElementById("storySticky");
 
+let ticking = false;
+
 storyScroll.addEventListener("scroll", function () {
-  if (storyScroll.scrollTop > 100) {
-    storySticky.classList.add("is-compact");
-  } else if (storyScroll.scrollTop < 10) {
-    storySticky.classList.remove("is-compact");
-  }
+  if (ticking) return;
+
+  ticking = true;
+
+  requestAnimationFrame(function () {
+    const scrollY = storyScroll.scrollTop;
+    const isCompact = storySticky.classList.contains("is-compact");
+
+    if (scrollY > 100 && !isCompact) {
+      storySticky.classList.add("is-compact");
+    } else if (scrollY < 10 && isCompact) {
+      storySticky.classList.remove("is-compact");
+    }
+
+    ticking = false;
+  });
 }, { passive: true });
 
   const pageTitle       = document.getElementById("pageTitle");
