@@ -264,6 +264,8 @@ img{ max-width:100%; display:block; }
   height: 100vh;
   height: 100dvh;
   overflow-y: auto;
+  overflow-anchor: none;
+  overscroll-behavior-y: contain;
   -webkit-overflow-scrolling: touch;
   padding-bottom: calc(64px + var(--safe-bottom));
 }
@@ -272,6 +274,7 @@ img{ max-width:100%; display:block; }
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow-anchor: none;
 }
 
 .story-topbar{
