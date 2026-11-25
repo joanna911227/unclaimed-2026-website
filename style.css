@@ -268,10 +268,14 @@ img{ max-width:100%; display:block; }
   padding-bottom: calc(64px + var(--safe-bottom));
 }
 
-.story-topbar{
+.story-sticky{
   position: sticky;
   top: 0;
-  z-index: 5;
+  z-index: 10;
+}
+
+.story-topbar{
+  position: relative;
   padding: calc(18px + var(--safe-top)) 20px 12px;
 }
 
@@ -296,26 +300,34 @@ img{ max-width:100%; display:block; }
 
 .story-header{
   text-align: center;
-  padding: 8px 24px 4px;
+  padding: 8px 20px 16px;
+  margin: 0 16px;
+  background: rgba(250,245,232,0.65);
+  border-radius: 16px;
 }
 
 .story-title{
-  font-size: clamp(24px, 7vw, 30px);
+  font-size: clamp(22px, 6vw, 28px);
   letter-spacing: 0.05em;
-  margin: 10px 0 10px;
+  margin: 10px 0;
+  color: var(--color-text);
 }
 
 .story-hint{
   font-size: 12.5px;
   color: var(--color-text-dim);
   letter-spacing: 0.03em;
-  white-space: pre-line; 
+  white-space: pre-line;
+  line-height: 1.8;
 }
 
 /* ---------- 三角色旋轉互動 ---------- */
 .carousel-wrap{
   position: relative;
-  padding: 22px 0 6px;
+  padding: 12px 0 10px;
+  margin: 12px 16px;
+  background: rgba(250,245,232,0.85);
+  border-radius: 16px;
 }
 
 .carousel{
@@ -326,7 +338,7 @@ img{ max-width:100%; display:block; }
 
 .carousel-drag-layer{
   position: relative;
-  height: clamp(210px, 46vw, 300px);
+ height: clamp(160px, 38vw, 220px);
   will-change: transform;
 }
 
@@ -357,23 +369,22 @@ img{ max-width:100%; display:block; }
 
 .char-slot[data-role="left"]{
   transform: translate(-50%,-50%) translateX(calc(var(--side-x) * -1)) scale(0.7);
-  opacity: 0.4;
+  opacity: 0.75;
   z-index: 1;
 }
 
 .char-slot[data-role="right"]{
   transform: translate(-50%,-50%) translateX(var(--side-x)) scale(0.7);
-  opacity: 0.4;
+ opacity: 0.75;
   z-index: 1;
 }
 
 .char-figure{
   position: relative;
-  width: clamp(120px, 32vw, 176px);
-  height: clamp(120px, 32vw, 176px);
+  width: clamp(90px, 26vw, 140px);
+  height: clamp(90px, 26vw, 140px);
   display: block;
 }
-
 .char-slot[data-role="center"] .char-figure{
  filter: drop-shadow(0 14px 22px rgba(112,69,34,0.18));
 }
@@ -404,8 +415,8 @@ img{ max-width:100%; display:block; }
   content:"";
   position: absolute;
   left: 50%;
-  background: var(--color-text-mute);
-  opacity: 0.4;
+  background: var(--color-accent);
+opacity: 0.9;
 }
 /* 頭 */
 .char-slot.img-missing .char-fallback::before{
@@ -462,14 +473,17 @@ img{ max-width:100%; display:block; }
 
 /* ---------- 故事文字區 ---------- */
 .story-panel{
-  padding: 18px 26px 20px;
+  padding: 24px 22px 30px;
   max-width: 620px;
-  margin: 0 auto;
+  width: calc(100% - 32px);
+  margin: 16px auto 0;
+  background: #FAF5E8;
+  border-radius: 16px;
 }
 
 .story-panel-inner{
-  border-top: 1px solid var(--color-line);
-  padding-top: 22px;
+  border-top: none;
+  padding-top: 4px;
   transition: opacity 0.28s ease;
 }
 
@@ -657,4 +671,58 @@ img{ max-width:100%; display:block; }
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* ===== 精簡版吸頂閱讀模式 ===== */
+
+.story-sticky.is-compact{
+  background: #FAF5E8;
+  box-shadow: 0 4px 12px rgba(112,69,34,0.12);
+  padding-bottom: 4px;
+}
+
+.story-sticky.is-compact .story-topbar{
+  padding: calc(4px + var(--safe-top)) 20px 0;
+}
+
+.story-sticky.is-compact .story-header{
+  padding: 0 16px 4px;
+  background: transparent;
+}
+
+.story-sticky.is-compact .eyebrow,
+.story-sticky.is-compact .story-hint{
+  display: none;
+}
+
+.story-sticky.is-compact .story-title{
+  font-size: 18px;
+  margin: 4px 0;
+}
+
+.story-sticky.is-compact .carousel-wrap{
+  margin: 0 16px;
+  padding: 0;
+  background: transparent;
+}
+
+.story-sticky.is-compact .carousel-drag-layer{
+  height: 80px;
+}
+
+.story-sticky.is-compact .char-figure{
+  width: 44px;
+  height: 44px;
+}
+
+.story-sticky.is-compact .char-slot{
+  gap: 2px;
+}
+
+.story-sticky.is-compact .char-name{
+  font-size: 12px;
+}
+
+.story-sticky.is-compact .carousel-dots{
+  display: none;
 }
