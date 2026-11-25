@@ -13,6 +13,15 @@
   const exhibitList  = document.getElementById("exhibitList");
   const backBtn      = document.getElementById("backBtn");
   const storyScroll  = document.getElementById("storyScroll");
+   const storySticky = document.getElementById("storySticky");
+
+storyScroll.addEventListener("scroll", function () {
+  if (storyScroll.scrollTop > 100) {
+    storySticky.classList.add("is-compact");
+  } else if (storyScroll.scrollTop < 10) {
+    storySticky.classList.remove("is-compact");
+  }
+}, { passive: true });
 
   const pageTitle       = document.getElementById("pageTitle");
   const pageDescription = document.getElementById("pageDescription");
@@ -154,9 +163,10 @@
     renderSlots(false);
     renderStory(exhibit.characters[centerIndex], false);
 
-    storyScroll.scrollTop = 0;
-    storyScreen.classList.add("active");
-    homeScreen.classList.remove("active");
+   storyScreen.classList.add("active");
+homeScreen.classList.remove("active");
+storySticky.classList.remove("is-compact");
+storyScroll.scrollTop = 0;
   }
 
   function goHome() {
