@@ -426,12 +426,12 @@ function renderStory(character, animate) {
     const exhibits = window.exhibits || [];
     const exhibitionName = config.exhibitionName || "遺憾轉運站";
     const englishLabel = config.englishLabel || "EXHIBITION";
-    const subtitle = config.homeSubtitle || "選擇一件貨物，看看它背後留下的故事。";
+    const subtitle = config.homeSubtitle || "選擇一件貨品，看看它背後留下的故事。";
 
     if (homeTitle) homeTitle.textContent = exhibitionName;
     if (homeEyebrow) homeEyebrow.textContent = englishLabel + " / NPC Project X Bridge 陳橋 " ;
     if (homeSubtitle) homeSubtitle.textContent = subtitle;
-    if (homeStats) homeStats.textContent = "共 " + exhibits.length + " 件貨物 · 3 種視角 · 15 段故事";
+    if (homeStats) homeStats.textContent = "共 " + exhibits.length + " 件貨品 · 3 種視角 · 15 段故事";
     if (pageTitle) pageTitle.textContent = exhibitionName + "｜互動故事展覽";
     if (pageDescription) pageDescription.setAttribute("content", exhibitionName + "——" + subtitle);
 
