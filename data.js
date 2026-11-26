@@ -27,7 +27,7 @@
 window.siteConfig = {
   exhibitionName: "無人簽收 UNCLAIMED",
   englishLabel: "EXHIBITION",
-  homeSubtitle: "選擇一件貨物，看看它背後留下的故事。"
+ homeSubtitle: "選擇一件貨品，看看它背後留下的故事。"
 };
 
 window.exhibits = [
