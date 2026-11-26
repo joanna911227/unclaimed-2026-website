@@ -262,9 +262,11 @@ function renderStory(character, animate) {
   storyTextWrap.classList.add("is-fading");
 
   storyFadeTimer = setTimeout(function () {
-    updateContent();
-    storyTextWrap.classList.remove("is-fading");
-  }, 220);
+  updateContent();
+  storySticky.classList.remove("is-compact");
+  storyScroll.scrollTop = 0;
+  storyTextWrap.classList.remove("is-fading");
+}, 220);
 }
 
 
