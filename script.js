@@ -267,9 +267,12 @@ function renderStory(character, animate) {
   if (storySticky.classList.contains("is-compact")) {
     const panel = storyTextWrap.closest(".story-panel");
     if (panel) {
-      storyScroll.scrollTop +=
-        panel.getBoundingClientRect().top -
-        storySticky.getBoundingClientRect().bottom;
+     storyScroll.scrollTo({
+  top: storyScroll.scrollTop +
+    panel.getBoundingClientRect().top -
+    storySticky.getBoundingClientRect().bottom,
+  behavior: "smooth"
+});
     }
   }
 
