@@ -15,26 +15,57 @@
   const storyScroll  = document.getElementById("storyScroll");
    const storySticky = document.getElementById("storySticky");
 
-let ticking = false;
+const storyInner  = document.getElementById("storyStickyInner");
+const storySpacer = document.getElementById("storySpacer");
 
-storyScroll.addEventListener("scroll", function () {
-  if (ticking) return;
+let collapseRange = 200; // 捲動多少 px 後完全縮成精簡列
 
-  ticking = true;
+function setProgress(p) {
+  storySticky.style.setProperty("--p", p.toFixed(4));
+}
 
-  requestAnimationFrame(function () {
-    const scrollY = storyScroll.scrollTop;
-    const isCompact = storySticky.classList.contains("is-compact");
+// 量測「完整」與「精簡」兩種狀態的高度，之後中間值全部用 --p 線性內插
+function measureHeader() {
+  const prev = storySticky.style.getPropertyValue("--p") || "0";
+  const hint = document.getElementById("storyHint");
+  const eyebrow = document.getElementById("storyEyebrow");
+  const dots = document.getElementById("carouselDots");
 
-    if (scrollY > 100 && !isCompact) {
-      storySticky.classList.add("is-compact");
-    } else if (scrollY < 10 && isCompact) {
-      storySticky.classList.remove("is-compact");
-    }
+  storyInner.classList.add("is-measuring", "is-natural");
+  setProgress(0);
+  storyInner.style.setProperty("--hint-h", hint.offsetHeight + "px");
+  storyInner.style.setProperty("--eyebrow-h", eyebrow.offsetHeight + "px");
+  storyInner.style.setProperty("--dots-h", dots.offsetHeight + "px");
+  storyInner.classList.remove("is-natural");
+  const full = storyInner.offsetHeight;
 
-    ticking = false;
-  });
-}, { passive: true });
+  setProgress(1);
+  const compact = storyInner.offsetHeight;
+
+  storyInner.classList.remove("is-measuring");
+  storySticky.style.setProperty("--h-full", full + "px");
+  storySticky.style.setProperty("--range", (full - compact) + "px");
+  storySpacer.style.height = full + "px";
+  collapseRange = Math.max(1, full - compact);
+  setProgress(parseFloat(prev));
+  updateProgress();
+}
+
+function updateProgress() {
+  const p = Math.min(1, Math.max(0, storyScroll.scrollTop / collapseRange));
+  setProgress(p);
+}
+
+storyScroll.addEventListener("scroll", updateProgress, { passive: true });
+
+let resizeTimer = null;
+window.addEventListener("resize", function () {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(measureHeader, 120);
+});
+if (document.fonts && document.fonts.ready) {
+  document.fonts.ready.then(measureHeader);
+}
 
   const pageTitle       = document.getElementById("pageTitle");
   const pageDescription = document.getElementById("pageDescription");
@@ -178,8 +209,8 @@ storyScroll.addEventListener("scroll", function () {
 
    storyScreen.classList.add("active");
 homeScreen.classList.remove("active");
-storySticky.classList.remove("is-compact");
 storyScroll.scrollTop = 0;
+    measureHeader();
   }
 
   function goHome() {
@@ -264,16 +295,8 @@ function renderStory(character, animate) {
  storyFadeTimer = setTimeout(function () {
   updateContent();
 
-  if (storySticky.classList.contains("is-compact")) {
-    const panel = storyTextWrap.closest(".story-panel");
-    if (panel) {
-     storyScroll.scrollTo({
-  top: storyScroll.scrollTop +
-    panel.getBoundingClientRect().top -
-    storySticky.getBoundingClientRect().bottom,
-  behavior: "smooth"
-});
-    }
+  if (storyScroll.scrollTop > collapseRange) {
+    storyScroll.scrollTo({ top: collapseRange, behavior: "smooth" });
   }
 
   storyTextWrap.classList.remove("is-fading");
