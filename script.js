@@ -261,10 +261,18 @@ function renderStory(character, animate) {
   clearTimeout(storyFadeTimer);
   storyTextWrap.classList.add("is-fading");
 
-  storyFadeTimer = setTimeout(function () {
+ storyFadeTimer = setTimeout(function () {
   updateContent();
-  storySticky.classList.remove("is-compact");
-  storyScroll.scrollTop = 0;
+
+  if (storySticky.classList.contains("is-compact")) {
+    const panel = storyTextWrap.closest(".story-panel");
+    if (panel) {
+      storyScroll.scrollTop +=
+        panel.getBoundingClientRect().top -
+        storySticky.getBoundingClientRect().bottom;
+    }
+  }
+
   storyTextWrap.classList.remove("is-fading");
 }, 220);
 }
